@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="jp">
+<head>
+  <meta charset="utf-8">
+  <title>document</title>
+  <style>
+      h1 {
+        color: #ff0000;
+        font-size: 100%;
+        font-weight: normal;
+        background-color: yellow;
+        padding: 20px 40px 80px 0;
+        border: 1px solid red;
+        border-radius: 10px 10px 0 0;
+      }
+      a {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: bolder;
+        background-color: #D6F5FF;
+        padding: 10px 20px;
+        border: 3px solid blue;
+        border-radius: 10px;
+        transition: padding 0.5s, opacity 3s, box-shadow 1.5s;
+        animation: spin 2s infinite linear;
+      }
+      a:hover {
+        opacity: 0.5;
+        /* transform: scale(1.1, 2); */
+        /*transform: rotate(45deg);*/
+        padding: 20px 40px;
+        box-shadow: 10px 10px 0px #333;
+      }
+      @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+      }
+  </style>
+
+</head>
+<body>
+    <canvas width="1000" height="800"></canvas>
+    <h1>大見出し</h1>
+    <h2>中見出し</h2>
+    <h3>小見出し</h3>
+    <ul>
+    <li>箇条書きリストです</li>
+    <li>箇条書きリストです</li>
+    <li>箇条書きリストです</li>
+    </ul>
+    <ol>
+    <li>番号リストです</li>
+    <li>番号リストです</li>
+    <li>番号リストです</li>
+    </ol>
+    <p>これは段落です。これは段落です。これは段落です。
+      これは段落です。これは段落です。これは段落です。</p>
+      <p><a href="#">新規登録</a></p>
+
+    <script>
+      //alert("hello");
+      var canvas = document.getElementsByTagName("canvas")[0];
+      var ctx = canvas.getContext("2d");
+      ctx.strokeRect(0, 0, 100, 100);
+
+      var x = 0;
+      setInterval(function() {
+        ctx.clearRect(0, 0, 1000, 1000);
+        x += 10;
+        ctx.strokeRect(x, 0, 100, 100);
+
+      },100)
+    </script>
+
+</body>
+</html>
